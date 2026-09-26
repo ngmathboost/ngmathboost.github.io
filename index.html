@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ng.mathboost | Online Math Tutoring</title>
+<meta name="description" content="Personalized online 1:1 math tutoring for grades 4–12 and college students. AP Calculus, SAT/ACT Math, algebra, precalculus, statistics, and more.">
+<style>
+  :root {
+    --navy:#17324d;
+    --blue:#2f6f9f;
+    --light:#f4f8fb;
+    --accent:#f2b84b;
+    --text:#25313b;
+    --white:#fff;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:Arial, Helvetica, sans-serif; color:var(--text); line-height:1.6; background:#fff; }
+  nav { position:sticky; top:0; z-index:10; background:rgba(255,255,255,.97); border-bottom:1px solid #e7edf2; }
+  .nav-inner { max-width:1100px; margin:auto; padding:14px 24px; display:flex; justify-content:space-between; align-items:center; }
+  .brand { font-size:1.35rem; font-weight:800; color:var(--navy); text-decoration:none; }
+  .brand span { color:var(--blue); }
+  .nav-links a { margin-left:22px; text-decoration:none; color:var(--text); font-size:.95rem; }
+  .hero { background:linear-gradient(135deg,#eef6fb,#fff8e9); padding:90px 24px 80px; }
+  .hero-inner { max-width:1100px; margin:auto; display:grid; grid-template-columns:1.3fr .7fr; gap:55px; align-items:center; }
+  .tag { color:var(--blue); font-weight:700; letter-spacing:.08em; text-transform:uppercase; font-size:.9rem; }
+  h1 { font-size:clamp(2.5rem,6vw,4.6rem); line-height:1.05; margin:12px 0 16px; color:var(--navy); }
+  h1 span { color:var(--blue); }
+  .hero h2 { font-size:1.5rem; margin:0 0 16px; color:var(--navy); }
+  .hero p { font-size:1.15rem; max-width:650px; }
+  .buttons { display:flex; gap:12px; flex-wrap:wrap; margin-top:28px; }
+  .btn { display:inline-block; padding:13px 22px; border-radius:8px; text-decoration:none; font-weight:700; }
+  .primary { background:var(--blue); color:white; }
+  .secondary { border:2px solid var(--blue); color:var(--blue); }
+  .hero-card { background:white; padding:30px; border-radius:18px; box-shadow:0 10px 35px rgba(23,50,77,.12); }
+  .hero-card .number { font-size:3rem; font-weight:800; color:var(--blue); line-height:1; }
+  section { padding:75px 24px; }
+  .section-inner { max-width:1100px; margin:auto; }
+  .light { background:var(--light); }
+  .center { text-align:center; }
+  h2.section-title { color:var(--navy); font-size:2.1rem; margin:0 0 12px; }
+  .subtitle { max-width:700px; margin:0 auto 40px; color:#596873; }
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .card { background:white; padding:25px; border-radius:14px; border:1px solid #e6edf2; }
+  .card h3 { margin-top:0; color:var(--navy); }
+  .subject-list { columns:2; padding-left:20px; }
+  .about { display:grid; grid-template-columns:1fr 1fr; gap:45px; align-items:center; }
+  .checklist { list-style:none; padding:0; }
+  .checklist li { margin:13px 0; padding-left:27px; position:relative; }
+  .checklist li:before { content:"✓"; position:absolute; left:0; color:var(--blue); font-weight:bold; }
+  .contact { background:var(--navy); color:white; }
+  .contact h2 { color:white; }
+  .contact-box { text-align:center; max-width:700px; margin:auto; }
+  .email { color:white; font-size:1.2rem; font-weight:700; text-decoration:none; }
+  footer { background:#102538; color:#d9e4ec; text-align:center; padding:25px; font-size:.9rem; }
+  @media (max-width:800px) {
+    .hero-inner,.about { grid-template-columns:1fr; }
+    .grid { grid-template-columns:1fr; }
+    .nav-links { display:none; }
+    .subject-list { columns:1; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="#top">ng<span>.mathboost</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#why">Why ng.mathboost?</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <div class="tag">Online 1:1 Math Tutoring</div>
+      <h1>Building confidence <span>through math.</span></h1>
+      <h2>Grades 4–12 & College</h2>
+      <p>Personalized, interactive math tutoring designed to help students understand concepts, strengthen problem-solving skills, prepare for exams, and feel more confident in math.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#contact">Contact Nancy</a>
+        <a class="btn secondary" href="#subjects">View Subjects</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="number">17+</div>
+      <h3>Years of Private Tutoring Experience</h3>
+      <p>Individualized instruction for students at different levels, from foundational math through advanced and college-level courses.</p>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="section-inner about">
+    <div>
+      <h2 class="section-title">Personalized Math Support</h2>
+      <p>Every student learns differently. At ng.mathboost, sessions are tailored to the student's current level, goals, and learning needs.</p>
+      <p>Whether a student needs help with homework, wants to strengthen foundational skills, or is preparing for an important exam, lessons focus on understanding—not simply memorizing steps.</p>
+    </div>
+    <div>
+      <ul class="checklist">
+        <li>Personalized 1:1 instruction</li>
+        <li>Interactive online sessions</li>
+        <li>Homework and exam support</li>
+        <li>Flexible scheduling</li>
+        <li>Conceptual understanding and problem solving</li>
+        <li>Confidence-building approach</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="subjects">
+  <div class="section-inner">
+    <div class="center">
+      <h2 class="section-title">Math Subjects</h2>
+      <p class="subtitle">Support is available from elementary and middle school math through advanced high school and college mathematics.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Elementary & Middle School</h3>
+        <ul>
+          <li>Arithmetic & Fractions</li>
+          <li>Decimals & Percentages</li>
+          <li>Pre-Algebra</li>
+          <li>Geometry</li>
+          <li>Basic Algebra</li>
+          <li>Problem Solving</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>High School & Advanced Math</h3>
+        <ul>
+          <li>Algebra 1 & 2</li>
+          <li>Geometry & Trigonometry</li>
+          <li>Honors Math</li>
+          <li>Precalculus</li>
+          <li>AP Calculus AB/BC</li>
+          <li>SAT/ACT Math</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>College Math</h3>
+        <ul>
+          <li>Calculus</li>
+          <li>Statistics & Probability</li>
+          <li>Linear Algebra</li>
+          <li>College Algebra</li>
+          <li>Other College-Level Courses</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="section-inner">
+    <div class="center">
+      <h2 class="section-title">Why ng.mathboost?</h2>
+      <p class="subtitle">The goal is more than getting the next problem right—it is helping students develop skills they can use independently.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><h3>Understand</h3><p>Break difficult concepts into manageable steps and connect new ideas to what students already know.</p></div>
+      <div class="card"><h3>Practice</h3><p>Work through targeted examples and problems with guidance and feedback.</p></div>
+      <div class="card"><h3>Grow</h3><p>Build stronger problem-solving habits and greater confidence over time.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-box">
+    <h2 class="section-title">Ready to Get Started?</h2>
+    <p>If you're looking for personalized online math tutoring, feel free to reach out for more information or to discuss your student's needs.</p>
+    <p><a class="email" href="mailto:ng.mathboost@gmail.com">ng.mathboost@gmail.com</a></p>
+    <div class="buttons" style="justify-content:center">
+      <a class="btn primary" style="background:var(--accent);color:var(--navy)" href="mailto:ng.mathboost@gmail.com?subject=ng.mathboost%20Tutoring%20Inquiry">Message Nancy</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 ng.mathboost · Online Math Tutoring · Building confidence through math.
+</footer>
+
+</body>
+</html>
