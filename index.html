@@ -3,189 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ng.mathboost | Online Math Tutoring</title>
-<meta name="description" content="Personalized online 1:1 math tutoring for grades 4–12 and college students. AP Calculus, SAT/ACT Math, algebra, precalculus, statistics, and more.">
+<meta name="description" content="ng.mathboost — personalized online 1:1 math tutoring for grades 4–12 and college students.">
+<title>ng.mathboost | Building Confidence Through Math</title>
 <style>
-  :root {
-    --navy:#17324d;
-    --blue:#2f6f9f;
-    --light:#f4f8fb;
-    --accent:#f2b84b;
-    --text:#25313b;
-    --white:#fff;
-  }
-  * { box-sizing:border-box; }
-  body { margin:0; font-family:Arial, Helvetica, sans-serif; color:var(--text); line-height:1.6; background:#fff; }
-  nav { position:sticky; top:0; z-index:10; background:rgba(255,255,255,.97); border-bottom:1px solid #e7edf2; }
-  .nav-inner { max-width:1100px; margin:auto; padding:14px 24px; display:flex; justify-content:space-between; align-items:center; }
-  .brand { font-size:1.35rem; font-weight:800; color:var(--navy); text-decoration:none; }
-  .brand span { color:var(--blue); }
-  .nav-links a { margin-left:22px; text-decoration:none; color:var(--text); font-size:.95rem; }
-  .hero { background:linear-gradient(135deg,#eef6fb,#fff8e9); padding:90px 24px 80px; }
-  .hero-inner { max-width:1100px; margin:auto; display:grid; grid-template-columns:1.3fr .7fr; gap:55px; align-items:center; }
-  .tag { color:var(--blue); font-weight:700; letter-spacing:.08em; text-transform:uppercase; font-size:.9rem; }
-  h1 { font-size:clamp(2.5rem,6vw,4.6rem); line-height:1.05; margin:12px 0 16px; color:var(--navy); }
-  h1 span { color:var(--blue); }
-  .hero h2 { font-size:1.5rem; margin:0 0 16px; color:var(--navy); }
-  .hero p { font-size:1.15rem; max-width:650px; }
-  .buttons { display:flex; gap:12px; flex-wrap:wrap; margin-top:28px; }
-  .btn { display:inline-block; padding:13px 22px; border-radius:8px; text-decoration:none; font-weight:700; }
-  .primary { background:var(--blue); color:white; }
-  .secondary { border:2px solid var(--blue); color:var(--blue); }
-  .hero-card { background:white; padding:30px; border-radius:18px; box-shadow:0 10px 35px rgba(23,50,77,.12); }
-  .hero-card .number { font-size:3rem; font-weight:800; color:var(--blue); line-height:1; }
-  section { padding:75px 24px; }
-  .section-inner { max-width:1100px; margin:auto; }
-  .light { background:var(--light); }
-  .center { text-align:center; }
-  h2.section-title { color:var(--navy); font-size:2.1rem; margin:0 0 12px; }
-  .subtitle { max-width:700px; margin:0 auto 40px; color:#596873; }
-  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-  .card { background:white; padding:25px; border-radius:14px; border:1px solid #e6edf2; }
-  .card h3 { margin-top:0; color:var(--navy); }
-  .subject-list { columns:2; padding-left:20px; }
-  .about { display:grid; grid-template-columns:1fr 1fr; gap:45px; align-items:center; }
-  .checklist { list-style:none; padding:0; }
-  .checklist li { margin:13px 0; padding-left:27px; position:relative; }
-  .checklist li:before { content:"✓"; position:absolute; left:0; color:var(--blue); font-weight:bold; }
-  .contact { background:var(--navy); color:white; }
-  .contact h2 { color:white; }
-  .contact-box { text-align:center; max-width:700px; margin:auto; }
-  .email { color:white; font-size:1.2rem; font-weight:700; text-decoration:none; }
-  footer { background:#102538; color:#d9e4ec; text-align:center; padding:25px; font-size:.9rem; }
-  @media (max-width:800px) {
-    .hero-inner,.about { grid-template-columns:1fr; }
-    .grid { grid-template-columns:1fr; }
-    .nav-links { display:none; }
-    .subject-list { columns:1; }
-  }
+:root{--navy:#102a5c;--blue:#1769e0;--teal:#12a9a0;--purple:#6d4ce8;--gold:#f4b942;--ink:#172b4d;--muted:#5d6d86;--sky:#f3f9ff}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+a{text-decoration:none;color:inherit}.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid #e8eef7}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;color:var(--navy)}
+.brand-mark{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--purple));color:white;font-size:22px;box-shadow:0 8px 20px #405adc38}
+.brand-name{font-size:1.4rem}.brand-tag{font-size:.68rem;color:var(--muted);font-weight:700}
+nav{display:flex;gap:25px;align-items:center}nav a{font-size:.92rem;font-weight:750;color:#30486e}nav a:hover{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 21px;border-radius:999px;font-weight:800;transition:.2s transform,.2s box-shadow}
+.btn:hover{transform:translateY(-2px)}.btn-primary{color:#fff;background:linear-gradient(135deg,var(--blue),var(--purple));box-shadow:0 10px 24px #3f54da40}
+.hero{background:radial-gradient(circle at 85% 10%,#dff8f4 0,transparent 30%),linear-gradient(135deg,#eef7ff,#f8f4ff 58%,#fff);padding:72px 0 68px}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center}
+.eyebrow{display:inline-flex;background:#fff;border:1px solid #dce9f8;color:var(--blue);padding:8px 13px;border-radius:999px;font-weight:800;font-size:.84rem;margin-bottom:18px}
+h1{font-size:clamp(2.65rem,5vw,4.8rem);line-height:1.02;letter-spacing:-2.8px;color:var(--navy)}
+.gradient-text{background:linear-gradient(90deg,var(--blue),var(--purple),var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h2{font-size:1.45rem;margin:19px 0 12px;color:#28426d}.hero p{font-size:1.08rem;color:var(--muted);max-width:610px}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}.hero-note{margin-top:15px!important;font-size:.88rem!important}
+.hero-photo{position:relative}.photo-frame{border-radius:34px;overflow:hidden;background:#dcecff;box-shadow:0 16px 45px #1836671f;border:8px solid #ffffffcc}
+.photo-frame img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}.floating{position:absolute;background:#fff;padding:14px 17px;border-radius:18px;box-shadow:0 16px 45px #1836671f;font-weight:800;font-size:.9rem}
+.float-one{left:-20px;bottom:28px}.float-two{right:-16px;top:28px}
+.stats{padding:22px 0;background:#fff}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:20px;text-align:center;border-right:1px solid #e5edf7}.stat:last-child{border:0}.stat strong{display:block;color:var(--blue)}.stat span{font-size:.87rem;color:var(--muted)}
+section{padding:78px 0}.features{background:#f7fbff}.section-head{text-align:center;max-width:720px;margin:0 auto 42px}
+.kicker{color:var(--purple);font-weight:900;text-transform:uppercase;letter-spacing:1.7px;font-size:.76rem}
+.section-title{font-size:clamp(2rem,3.5vw,3rem);line-height:1.1;color:var(--navy);margin:8px 0 12px;letter-spacing:-1.4px}.section-head p{color:var(--muted)}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.feature{background:#fff;padding:28px 22px;border-radius:24px;box-shadow:0 9px 30px #1a406f12;border:1px solid #e7f0fa}
+.icon{width:50px;height:50px;border-radius:16px;display:grid;place-items:center;font-size:24px;margin-bottom:17px}.i-blue{background:#e5f1ff}.i-teal{background:#e4faf7}.i-purple{background:#eee9ff}.i-gold{background:#fff4d9}
+.feature h3{font-size:1.03rem;color:var(--navy);margin-bottom:7px}.feature p{font-size:.9rem;color:var(--muted)}
+.subjects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.subject{padding:28px;border-radius:24px;min-height:235px;border:1px solid #1e467014;position:relative;overflow:hidden}
+.subject:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-55px;bottom:-55px;background:#ffffff8c}
+.s-blue{background:linear-gradient(135deg,#eaf5ff,#dff0ff)}.s-purple{background:linear-gradient(135deg,#f2edff,#e9e1ff)}.s-teal{background:linear-gradient(135deg,#e7fbf7,#d9f5f0)}
+.subject .big-icon{font-size:31px}.subject h3{font-size:1.25rem;color:var(--navy);margin:10px 0}.subject ul{padding-left:19px;color:#4d6280;font-size:.93rem}
+.about{background:linear-gradient(180deg,#fff,#f7fbff)}.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center}
+.about-photo{border-radius:30px;overflow:hidden;box-shadow:0 16px 45px #1836671f;background:#eef5ff}.about-photo img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;display:block}
+.checklist{list-style:none;margin-top:22px;display:grid;gap:13px}.checklist li{display:flex;gap:11px;align-items:flex-start;color:#4f617d}.check{width:24px;height:24px;flex:0 0 24px;border-radius:50%;display:grid;place-items:center;background:#e5f8f5;color:var(--teal);font-weight:900}
+.experience{margin-top:25px;padding:18px 20px;border-radius:18px;background:#fff7df;border:1px solid #f9e4a9;color:#71520b;font-weight:800}
+.cta{padding:70px 0;background:linear-gradient(120deg,#12377c,#315ee8 55%,#684de0);color:#fff}.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}.cta h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.1;margin-bottom:9px}.cta p{opacity:.9;max-width:650px}.btn-light{background:#fff;color:var(--blue)}
+footer{background:#0d2147;color:#d7e3f7;padding:35px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-brand{font-weight:900;color:#fff;font-size:1.2rem}.footer-small{font-size:.83rem;color:#aebfdc}.email{color:#fff;font-weight:800}
+@media(max-width:900px){nav{display:none}.hero-grid,.about-grid{grid-template-columns:1fr}.feature-grid{grid-template-columns:repeat(2,1fr)}.subjects-grid{grid-template-columns:1fr 1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.photo-frame img{height:auto}.cta-inner{flex-direction:column;align-items:flex-start}}
+@media(max-width:600px){.nav{height:68px}.brand-name{font-size:1.15rem}.brand-tag{display:none}.hero{padding:42px 0}.hero-grid{gap:35px}h1{letter-spacing:-1.8px}.feature-grid,.subjects-grid{grid-template-columns:1fr}.photo-frame img{height:auto}.floating{font-size:.78rem;padding:10px 12px}.float-one{left:8px}.float-two{right:8px}.footer-inner{flex-direction:column;align-items:flex-start}section{padding:60px 0}}
 </style>
 </head>
 <body>
+<header><div class="container nav">
+<a class="brand" href="#home"><div class="brand-mark">∑</div><div><div class="brand-name">ng.mathboost</div><div class="brand-tag">Building confidence through math.</div></div></a>
+<nav><a href="#home">Home</a><a href="#subjects">Subjects</a><a href="#about">About</a><a href="#why">Why Me?</a><a href="#contact">Contact</a></nav>
+<a class="btn btn-primary" href="mailto:ng.mathboost@gmail.com?subject=ng.mathboost%20Tutoring%20Inquiry">✉ Contact Nancy</a>
+</div></header>
 
-<nav>
-  <div class="nav-inner">
-    <a class="brand" href="#top">ng<span>.mathboost</span></a>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#subjects">Subjects</a>
-      <a href="#why">Why ng.mathboost?</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-</nav>
+<main>
+<section class="hero" id="home"><div class="container hero-grid"><div>
+<div class="eyebrow">✨ Online 1:1 Math Tutoring</div>
+<h1>Build skills.<br><span class="gradient-text">Build confidence.</span></h1>
+<h2>Personalized math tutoring for grades 4–12 & college.</h2>
+<p>Whether you're catching up, getting ahead, preparing for an exam, or strengthening fundamentals, lessons are tailored to your goals and learning style.</p>
+<div class="hero-actions"><a class="btn btn-primary" href="mailto:ng.mathboost@gmail.com?subject=ng.mathboost%20Tutoring%20Inquiry">✉ Contact Nancy</a><a class="btn" style="background:#fff;color:var(--navy);border:1px solid #dbe6f5" href="#subjects">Explore subjects →</a></div>
+<p class="hero-note">17+ years of private tutoring experience • Flexible online sessions • Homework & exam support</p>
+</div>
+<div class="hero-photo"><div class="photo-frame"><img src="study-space.png" alt="Math study space with Algebra, Geometry, Precalculus, and Calculus books"></div><div class="floating float-one">📚 Step-by-step learning</div><div class="floating float-two">⭐ You can do it!</div></div>
+</div></section>
 
-<header class="hero" id="top">
-  <div class="hero-inner">
-    <div>
-      <div class="tag">Online 1:1 Math Tutoring</div>
-      <h1>Building confidence <span>through math.</span></h1>
-      <h2>Grades 4–12 & College</h2>
-      <p>Personalized, interactive math tutoring designed to help students understand concepts, strengthen problem-solving skills, prepare for exams, and feel more confident in math.</p>
-      <div class="buttons">
-        <a class="btn primary" href="#contact">Contact Nancy</a>
-        <a class="btn secondary" href="#subjects">View Subjects</a>
-      </div>
-    </div>
-    <div class="hero-card">
-      <div class="number">17+</div>
-      <h3>Years of Private Tutoring Experience</h3>
-      <p>Individualized instruction for students at different levels, from foundational math through advanced and college-level courses.</p>
-    </div>
-  </div>
-</header>
+<section class="stats"><div class="container stats-grid">
+<div class="stat"><strong>17+ Years</strong><span>Private tutoring experience</span></div><div class="stat"><strong>1:1 Support</strong><span>Personalized instruction</span></div><div class="stat"><strong>Online</strong><span>Learn from home</span></div><div class="stat"><strong>All Levels</strong><span>Grades 4–12 & college</span></div>
+</div></section>
 
-<section id="about">
-  <div class="section-inner about">
-    <div>
-      <h2 class="section-title">Personalized Math Support</h2>
-      <p>Every student learns differently. At ng.mathboost, sessions are tailored to the student's current level, goals, and learning needs.</p>
-      <p>Whether a student needs help with homework, wants to strengthen foundational skills, or is preparing for an important exam, lessons focus on understanding—not simply memorizing steps.</p>
-    </div>
-    <div>
-      <ul class="checklist">
-        <li>Personalized 1:1 instruction</li>
-        <li>Interactive online sessions</li>
-        <li>Homework and exam support</li>
-        <li>Flexible scheduling</li>
-        <li>Conceptual understanding and problem solving</li>
-        <li>Confidence-building approach</li>
-      </ul>
-    </div>
-  </div>
-</section>
+<section class="features"><div class="container"><div class="section-head"><div class="kicker">A better tutoring experience</div><h2 class="section-title">Learning that meets you where you are</h2><p>Clear explanations, patient guidance, and focused practice help students understand the “why,” not just memorize the steps.</p></div>
+<div class="feature-grid">
+<div class="feature"><div class="icon i-blue">🎯</div><h3>Personalized Learning</h3><p>Lessons are tailored to each student's needs, pace, and goals.</p></div>
+<div class="feature"><div class="icon i-teal">💻</div><h3>Flexible & Convenient</h3><p>Interactive online tutoring from the comfort of home.</p></div>
+<div class="feature"><div class="icon i-purple">💡</div><h3>Build Confidence</h3><p>Step-by-step support that makes challenging ideas easier to understand.</p></div>
+<div class="feature"><div class="icon i-gold">⭐</div><h3>Meaningful Progress</h3><p>Stronger skills, better understanding, and preparation for important goals.</p></div>
+</div></div></section>
 
-<section class="light" id="subjects">
-  <div class="section-inner">
-    <div class="center">
-      <h2 class="section-title">Math Subjects</h2>
-      <p class="subtitle">Support is available from elementary and middle school math through advanced high school and college mathematics.</p>
-    </div>
-    <div class="grid">
-      <div class="card">
-        <h3>Elementary & Middle School</h3>
-        <ul>
-          <li>Arithmetic & Fractions</li>
-          <li>Decimals & Percentages</li>
-          <li>Pre-Algebra</li>
-          <li>Geometry</li>
-          <li>Basic Algebra</li>
-          <li>Problem Solving</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>High School & Advanced Math</h3>
-        <ul>
-          <li>Algebra 1 & 2</li>
-          <li>Geometry & Trigonometry</li>
-          <li>Honors Math</li>
-          <li>Precalculus</li>
-          <li>AP Calculus AB/BC</li>
-          <li>SAT/ACT Math</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>College Math</h3>
-        <ul>
-          <li>Calculus</li>
-          <li>Statistics & Probability</li>
-          <li>Linear Algebra</li>
-          <li>College Algebra</li>
-          <li>Other College-Level Courses</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+<section id="subjects"><div class="container"><div class="section-head"><div class="kicker">Subjects & courses</div><h2 class="section-title">Math support from fundamentals to advanced courses</h2><p>Choose the level that fits your student, or get support with a specific class, assignment, or exam.</p></div>
+<div class="subjects-grid">
+<div class="subject s-teal"><div class="big-icon">🔢</div><h3>Elementary & Middle School</h3><ul><li>Arithmetic & fractions</li><li>Decimals & percentages</li><li>Pre-Algebra</li><li>Geometry & problem solving</li></ul></div>
+<div class="subject s-blue"><div class="big-icon">📐</div><h3>High School & Advanced</h3><ul><li>Algebra 1 & 2</li><li>Geometry & Trigonometry</li><li>Precalculus & Honors Math</li><li>AP Calculus AB/BC</li></ul></div>
+<div class="subject s-purple"><div class="big-icon">🎓</div><h3>College Math</h3><ul><li>Calculus</li><li>Statistics & Probability</li><li>Linear Algebra</li><li>College Algebra & other college courses</li></ul></div>
+<div class="subject s-blue"><div class="big-icon">📝</div><h3>Test Preparation</h3><ul><li>SAT / ACT Math</li><li>AP Calculus & AP Statistics</li><li>CLT Math</li><li>Homework & exam preparation</li></ul></div>
+<div class="subject s-teal"><div class="big-icon">🧠</div><h3>Problem Solving</h3><ul><li>Conceptual understanding</li><li>Multi-step problems</li><li>Critical thinking</li><li>Strategies for difficult questions</li></ul></div>
+<div class="subject s-purple"><div class="big-icon">🚀</div><h3>Goal-Focused Support</h3><ul><li>Catch up on missed skills</li><li>Get ahead in class</li><li>Prepare for a new course</li><li>Build long-term confidence</li></ul></div>
+</div></div></section>
 
-<section id="why">
-  <div class="section-inner">
-    <div class="center">
-      <h2 class="section-title">Why ng.mathboost?</h2>
-      <p class="subtitle">The goal is more than getting the next problem right—it is helping students develop skills they can use independently.</p>
-    </div>
-    <div class="grid">
-      <div class="card"><h3>Understand</h3><p>Break difficult concepts into manageable steps and connect new ideas to what students already know.</p></div>
-      <div class="card"><h3>Practice</h3><p>Work through targeted examples and problems with guidance and feedback.</p></div>
-      <div class="card"><h3>Grow</h3><p>Build stronger problem-solving habits and greater confidence over time.</p></div>
-    </div>
-  </div>
-</section>
+<section class="about" id="about"><div class="container about-grid"><div class="about-photo"><img src="online-tutoring.png" alt="Student working through a math lesson online at a desk"></div>
+<div id="why"><div class="kicker">Why ng.mathboost?</div><h2 class="section-title">Support that turns “I can't do this” into “I understand it.”</h2><p style="color:var(--muted)">Math becomes much less intimidating when students have explanations that make sense, time to ask questions, and a clear path through the problem.</p>
+<ul class="checklist"><li><span class="check">✓</span><span>17+ years of private tutoring experience</span></li><li><span class="check">✓</span><span>Clear, patient explanations and individualized instruction</span></li><li><span class="check">✓</span><span>Focus on problem-solving and conceptual understanding</span></li><li><span class="check">✓</span><span>Flexible online sessions and personalized support</span></li><li><span class="check">✓</span><span>Support for elementary, middle school, high school, and college students</span></li></ul>
+<div class="experience">💙 Building confidence through math — one step at a time.</div>
+</div></div></section>
 
-<section class="contact" id="contact">
-  <div class="contact-box">
-    <h2 class="section-title">Ready to Get Started?</h2>
-    <p>If you're looking for personalized online math tutoring, feel free to reach out for more information or to discuss your student's needs.</p>
-    <p><a class="email" href="mailto:ng.mathboost@gmail.com">ng.mathboost@gmail.com</a></p>
-    <div class="buttons" style="justify-content:center">
-      <a class="btn primary" style="background:var(--accent);color:var(--navy)" href="mailto:ng.mathboost@gmail.com?subject=ng.mathboost%20Tutoring%20Inquiry">Message Nancy</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2026 ng.mathboost · Online Math Tutoring · Building confidence through math.
-</footer>
-
-</body>
-</html>
+<section class="cta" id="contact"><div class="container cta-inner"><div><h2>Ready to make math feel clearer?</h2><p>Have a question, want to discuss a course, or ready to schedule a tutoring session? I'd love to hear from you.</p></div><a class="btn btn-light" href="mailto:ng.mathboost@gmail.com?subject=ng.mathboost%20Tutoring%20Inquiry">✉ Contact Nancy →</a></div></section>
+</main>
+<footer><div class="container footer-inner"><div><div class="footer-brand">ng.mathboost</div><div class="footer-small">Building confidence through math.</div></div><div class="footer-small">Nancy Goyal • Online 1:1 Math Tutoring</div><a class="email" href="mailto:ng.mathboost@gmail.com">ng.mathboost@gmail.com</a></div></footer>
+</body></html>
